@@ -75,6 +75,7 @@ body {
 	background-color: #000;
 	color: #FFF;
 	height: 25px;
+	
 }
 #footer h6 {
 	font-size: 12px;
@@ -87,6 +88,23 @@ body {
     background:red;
 }
 
+.img-right{
+	float:right;
+}
+
 h2,h3,h4{
     color:red;
+}
+
+.cf::before,
+.cf::after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+.cf {
+	*zoom: 1;
 }

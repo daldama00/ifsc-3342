@@ -1,0 +1,154 @@
+/* =====================================
+   1. General / Reset Styles
+   ===================================== */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #F0F8FF;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* =====================================
+   2. Typography
+   ===================================== */
+
+h1 {
+  font-size: 36px;
+  color: #6CABDD;
+}
+
+h2 {
+  font-size: 28px;
+  color: #4A90E2;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+
+/* =====================================
+   3. Layout
+   ===================================== */
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+
+/* =====================================
+   4. Header
+   ===================================== */
+
+header {
+  background-color: #6CABDD;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+
+/* =====================================
+   5. Navigation
+   ===================================== */
+
+nav {
+  background-color: #98C5E9;
+  padding: 10px;
+  text-align: left;
+}
+
+nav a {
+  color: #0A2540;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+/* =====================================
+   6. Content Sections
+   ===================================== */
+
+.card {
+  background-color: #F5FAFF;
+  border-left: 5px solid #6CABDD;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+
+/* =====================================
+   7. Images
+   ===================================== */
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+/* =====================================
+   8. Buttons
+   ===================================== */
+
+button {
+  background-color: #6CABDD;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4A90E2;
+}
+
+
+/* =====================================
+   9. Footer
+   ===================================== */
+
+footer {
+  background-color: #6CABDD;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+
+/* =====================================
+   10. Responsive Design
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 95%;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+}

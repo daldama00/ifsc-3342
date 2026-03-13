@@ -19,20 +19,27 @@ html {
   clear: both;
 }
 
-main {
-background-image: url("https://assets.codepen.io/7248/grid-1.png");
-width:80vw;
-margin: 20px auto;
-border: 1px solid #000;  
+body {
+  font-family: Georgia, Times New Roman, serif;
+  line-height: 1.0;
+  background: #f0f0f0;
+  color: #333333;
 }
 
-header.primary, footer.primary{
-/*  width:920px; */
+main {
+width:80vw;
+margin: 20px auto;
+border: 1px solid #000;
+background: #f0f0f0;  
+}
+
+header.primary {
  width:95.833%;
- background: rgba(0, 0, 0, 0.4);
+ background: rgba(82, 39, 238, 0.4);
  margin: 2.0833%;
  padding: 20px;
  float: left; 
+ color: black;
 }
 
 #blog{

@@ -20,6 +20,8 @@ body {
   
   display: grid;
   grid-template-columns: repeat(16, 1fr); /* 16 equal columns */
+  grid-template-rows: auto;
+  gap: 20px;
   column-gap: 20px;      /* gutter between columns */
   row-gap: 20px;
   border: 6px solid #87ceeb;

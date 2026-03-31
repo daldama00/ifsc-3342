@@ -1,61 +1,161 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
+/* ===== RESET / BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-/* Fix Clearing Bugs */
-
-.cf:before,
-.cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.cf:after {
-  clear: both;
 }
 
 body {
-  font-family: Georgia, Times New Roman, serif;
-  line-height: 1.0;
-  background: #f0f0f0;
-  color: #333333;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f9fc;
+  color: #333;
 }
 
-main {
-width:80vw;
-margin: 20px auto;
-border: 1px solid #000;
-background: #f0f0f0;  
-}
-
-header.primary {
- width:95.833%;
- background: rgba(82, 39, 238, 0.4);
- margin: 2.0833%;
- padding: 20px;
- float: left; 
- color: black;
-}
-
-#blog{
-/*   width:638px; */
-  width: 66.4583%;
-  margin-left: 2.0833%;
-  background: rgba(0, 0, 0, 0.6);
+/* ===== CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 20px auto;
+  border: 6px solid #87ceeb;
   padding: 20px;
-  float: left;
-
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-aside {
-  background: rgba(0, 0, 0, 0.3);
-  width: 27.2916%;
-  margin-left: 2.0833%;
+/* ===== HEADER ===== */
+#header {
+  background: #87ceeb; /* sky blue */
+  color: white;
   padding: 20px;
-  float: left;
+  border-radius: 10px;
+}
+
+#header h1 {
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+#header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* ===== NAVIGATION ===== */
+#navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#navigation a:hover {
+  background: #5bbde6;
+}
+
+/* ===== CONTENT LAYOUT ===== */
+#content {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* ===== PRIMARY (LEFT) ===== */
+#primary {
+  flex: 3;
+}
+
+.post {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2a7da2;
+}
+
+.post h2 {
+  margin-top: 20px;
+  color: #5bbde6;
+}
+
+.post p {
+  margin-bottom: 15px;
+}
+
+.post ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.post-meta {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ===== SECONDARY (SIDEBAR RIGHT) ===== */
+#secondary {
+  flex: 1;
+}
+
+.widget {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.widget h1 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2a7da2;
+}
+
+.widget p {
+  font-size: 0.95rem;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #2a7da2;
+}
+
+a:hover {
+  color: #5bbde6;
+}
+
+/* ===== FOOTER ===== */
+#colophon {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: #87ceeb;
+  color: white;
+  border-radius: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #content {
+    flex-direction: column;
+  }
 }

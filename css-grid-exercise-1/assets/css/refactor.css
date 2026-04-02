@@ -1,54 +1,161 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* GLOBAL RESET / BOX MODEL */
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
-/* Fix Clearing Bugs */
-
-.cf:before,
-.cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  margin: 0;
+  padding: 0;
 }
 
-.cf:after {
-  clear: both;
+/* BODY STYLES */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #ffffff; /* keep white for contrast */
+  line-height: 1.6;
+  color: #1C2C5B; /* dark navy for text */
 }
 
+/* MAIN GRID CONTAINER
+   12 columns, 40px gutter, 1020px width */
 main {
-background-image: url("https://assets.codepen.io/7248/grid-1.png");
-width:80vw;
-margin: 20px auto;
-border: 1px solid #000;  
-}
-
-header.primary, footer.primary{
-/*  width:920px; */
- width:95.833%;
- background: rgba(0, 0, 0, 0.4);
- margin: 2.0833%;
- padding: 20px;
- float: left; 
-}
-
-#blog{
-/*   width:638px; */
-  width: 66.4583%;
-  margin-left: 2.0833%;
-  background: rgba(0, 0, 0, 0.6);
+  width: 1020px;
+  margin: 20px auto;
+  border: 2px solid #6CABDD; /* sky blue border */
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 20px; /* gutter width */
   padding: 20px;
-  float: left;
-
 }
 
+/* HEADER */
+header.primary {
+  grid-column: 1 / 17;
+  padding: 20px;
+  background: linear-gradient(135deg, #6CABDD 0%, #1C2C5B 100%); /* sky blue to navy gradient */
+  color: #FFFFFF; /* white text */
+}
+
+header.primary h1 {
+  margin-bottom: 10px;
+}
+
+header.primary h2 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: #FFFFFF; /* white subtitle */
+}
+
+/* NAVIGATION */
+nav.primary ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+nav.primary li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+nav.primary a {
+  text-decoration: none;
+  color: #FFFFFF; /* white nav links */
+  font-weight: bold;
+}
+
+nav.primary a:hover {
+  text-decoration: underline;
+  color: #A3D9F7; /* lighter sky blue on hover */
+}
+
+/* BLOG (MAIN COLUMN) spans 16 columns */
+#content {
+  grid-column-start: 1;
+  grid-column-end: 17;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+}
+
+#blog {
+  grid-column: 1 / 11;
+  padding: 20px;
+  background: rgba(108, 171, 221, 0.1); /* light sky blue overlay */
+}
+
+#blog h2 {
+  margin-bottom: 20px;
+  color: #1C2C5B; /* navy heading */
+}
+
+.post {
+  margin-bottom: 40px;
+}
+
+.post header h3 {
+  margin: 10px 0;
+  color: #1C2C5B;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: #6CABDD; /* sky blue date */
+}
+
+.post ul {
+  margin: 15px 0 15px 20px;
+}
+
+.post-meta {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #1C2C5B;
+}
+
+/* SIDEBAR spans 6 columns */
 aside {
-  background: rgba(0, 0, 0, 0.3);
-  width: 27.2916%;
-  margin-left: 2.0833%;
+  grid-column: 11 / 17;
   padding: 20px;
-  float: left;
+  background: rgba(28, 44, 91, 0.08); /* very light navy overlay */
+}
+
+.widget {
+  margin-bottom: 30px;
+}
+
+.widget h3 {
+  margin-bottom: 10px;
+  color: #1C2C5B; /* navy widget titles */
+}
+
+/* FOOTER */
+footer.primary {
+  grid-column: 1 / 17;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #6CABDD, #202729); 
+  color: #FFFFFF; 
+
+footer.primary a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+footer.primary a:hover {
+  text-decoration: underline;
+  color: #A3D9F7; /* lighter sky blue on hover */
+}
+
+/* LINK STYLING */
+a {
+  color: #ffffff; /* white links */
+}
+
+a:hover {
+  color: #6CABDD; /* sky blue on hover */
 }

@@ -135,20 +135,40 @@ footer {
   padding: 15px;
 }
 
-
 /* =====================================
    Responsive Design
    ===================================== */
 
 @media (max-width: 768px) {
-
+  
+  /* Make the container fill more of the screen */
   .container {
     width: 95%;
+    padding: 10px;
   }
 
-  nav a {
-    display: block;
+  /* Stack the navigation links vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0; /* Add vertical spacing between touch targets */
+  }
+
+  /* Scale down the font sizes for mobile */
+  h1 {
+    font-size: 28px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  /* Ensure the cards have enough breathing room */
+  .card {
+    padding: 15px;
     margin: 10px 0;
   }
-
 }

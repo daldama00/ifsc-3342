@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Aldamas Resume</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="container" id="top">
+  <!-- Main navigation -->
+  <nav class="primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main -->
+<main itemscope itemtype="https://schema.org/Person" class="container">
+  <h1 class="page-title" itemprop="name">Daniel Aldama</h1>
+
+  <section id="about">
+    <h2>Personal Details</h2>
+
+    <div class="bio">
+      <img id="headshot" itemprop="image" src="assets/img/Linkedin-picture.png" alt="Your Name">
+      <p itemprop="description">
+        Driven and detail-oriented aspiring computer programmer with a foundation in software development, problem-solving, and creative thinking. Proficient Experience in building full-stack web applications with React and Flask, managing databases with MySQL, and implementing CI/CD pipelines for seamless deployment. Skilled in Python, C++, MySQL programming languages.
+
+      </p>
+    </div>
+
+    <dl class="details">
+      <dt>Name</dt>
+      <dd itemprop="name">
+        <span itemprop="givenName">Daniel</span> <span itemprop="familyName">Aldama</span>
+      </dd>
+
+      <dt>Date of birth</dt>
+      <dd><time itemprop="birthDate" datetime="2000-09-29">09/29/2000</time></dd>
+
+      <dt>Nationality</dt>
+      <dd itemprop="nationality">United States</dd>
+
+      <dt>Location</dt>
+      <!-- Keep original text, but model as Place for better schema correctness -->
+      <dd itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Little Rock, Arkansas</span>
+      </dd>
+
+      <dt>Telephone</dt>
+      <dd>
+        <!-- tel: should be digits; keep visible text as-is -->
+        <a itemprop="telephone" href="tel:5012466589">501-246-6589</a>
+      </dd>
+
+      <dt>Email</dt>
+      <dd>
+        <a itemprop="email" href="mailto:danielaldama00@gmail.com">danielaldama00@gmail.com</a>
+      </dd>
+
+      <dt>Address</dt>
+      <dd itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">3101 Walker St</span>
+        <span itemprop="addressLocality">Little Rock</span>
+        <span itemprop="postalCode">72204</span>
+        <span itemprop="addressCountry">USA</span>
+      </dd>
+    </dl>
+
+    <ul class="related-links">
+      <li><a itemprop="sameAs" rel="me" href="https://www.linkedin.com/in/conner-woods-3a2803350">linkedin</a></li>
+      <li><a itemprop="url" href="Cwoods Resume.docx (5).pdf" download>pdf resume</a></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li class="skill" itemprop="knowsAbout">Security Tools: Nmap, Burp Suite, Metasploit, Nessus, Hydra, Remote Desktop, Virtual Machines (VirtualBox).</li>
+      <li class="skill" itemprop="knowsAbout">Security Techniques: Penetration Testing, Vulnerability Assessment, OWASP Top 10, Active Directory Pentesting, System Hardening.</li>
+      <li class="skill" itemprop="knowsAbout">Operating Systems: Windows (Windows 10, 11, and Server 2019) and Linux (Kali).</li>
+      <li class="skill" itemprop="knowsAbout">Technical Skills: PC Building, System Configuration, Troubleshooting, and Active Directory Configuration.</li>
+      <li class="skill" itemprop="knowsAbout">Programming Languages: Python, SQL, C++.</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <!-- current job -->
+    <article class="job">
+      <!-- jobTitle is valid on Person; this is still within Person scope -->
+      <h3 itemprop="jobTitle">Amazon Associate</h3>
+
+      <!-- worksFor is valid on Person -->
+      <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Amazon Fulfillment Center</span>
+        <span>December 2019 - August 2021</span>
+
+        <div itemprop="description">
+          <p>Key responsibilities:</p>
+          <ul>
+            <li>Efficiently managed high-volume order fulfillment in fast-paced warehouse environment, consistently meeting daily productivity targets and quality standards</li>
+            <li>Developed strong prioritization and time management skills by maintaining high accuracy and efficieny during peak seasons, even under tight deadlines and high-pressure conditions</li>
+            <li>Supported team performance by identifying workflow bottlenecks and suggesting process improvements, contributing to a more efficient work environment</li>
+            <li>Supported a clean, organized, and safe store environment</li>
+            <li>Unloaded deliveries and assisted with storeroom organization</li>
+          </ul>
+        </div>
+
+        <a itemprop="url" href="https://www.dollargeneral.com/">Company Website</a>
+
+        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="streetAddress">11046 US-165</span>
+          <span itemprop="addressLocality">North Little Rock</span>
+          <span itemprop="addressRegion">AR</span>
+          <span itemprop="postalCode">72117</span>
+          <span itemprop="addressCountry">US</span>
+        </span>
+      </div>
+    </article>
+
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+
+    <article class="certificate" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+      <h3 itemprop="description"><abbr title="Bachelor of Science in Cybersecurity">BS</abbr> Cybersecurity</h3>
+      <span itemprop="name">University of Arkansas at Little Rock</span>
+      <span itemprop="location" itemscope>Little Rock, USA</span>
+      <span>January 2026 - Present</span>
+    </article>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div id="copyright">
+    &copy; 2026 Daniel Aldama | <a href="#top">Top</a>
+  </div>
+</footer>
+ 
+</body>
+</html>

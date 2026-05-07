@@ -1,174 +1,178 @@
 /* =====================================
-   General / Reset Styles
+   Variables & Reset
    ===================================== */
+:root {
+  --primary-color: #6CABDD;
+  --secondary-color: #4A90E2;
+  --nav-bg: #98C5E9;
+  --bg-light: #F0F8FF;
+  --card-bg: #F5FAFF;
+  --text-dark: #333333;
+  --nav-text: #0A2540;
+  --radius: 10px;
+  --white: #ffffff;
+}
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #F0F8FF;
-  color: #333;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   margin: 0;
   text-align: center;
 }
 
-
 /* =====================================
-   Typography
+   Layout & Typography
    ===================================== */
-
-h1 {
-  font-size: 36px;
-  color: #6CABDD;
-}
-
-h2 {
-  font-size: 28px;
-  color: #4A90E2;
-}
-
-h3 {
-  font-size: 22px;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-
-/* =====================================
-   Layout
-   ===================================== */
-
 .container {
   width: 80%;
   margin: auto;
   padding: 20px;
 }
 
+h1 { font-size: 36px; color: var(--primary-color); }
+h2 { font-size: 28px; color: var(--secondary-color); }
+h3 { font-size: 22px; }
+p { margin-bottom: 15px; }
 
 /* =====================================
-   Header
+   Nested Components
    ===================================== */
 
+/* =====================================
+   Header (Fixed for Visibility)
+   ===================================== */
+
+/* =====================================
+   Professional Header Refinement
+   ===================================== */
 header {
-  background-color: #6CABDD;
-  color: white;
+  background-color: var(--secondary-color); /* Darker blue for a more executive feel */
+  background-image: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--white);
+  padding: 60px 20px; /* Increased vertical padding for a "Hero" feel */
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Horizontal centering */
+  justify-content: center; /* Vertical centering */
   text-align: center;
-  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid var(--nav-bg);
+
+  .card {
+    background: transparent; /* Remove card styling inside header */
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--white) !important;
+    font-size: 3rem;
+    letter-spacing: -1px;    /* Tighter letters look more modern */
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    margin: 10px 0 0 0;
+    color: var(--white);
+    font-weight: 300;       /* Light weight for the sub-header */
+    font-size: 1.2rem;
+    letter-spacing: 2px;    /* Spaced out letters for sub-headers look "premium" */
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
 }
-
-header h1 {
-  margin: 0;
-}
-
-
-/* =====================================
-   Navigation
-   ===================================== */
 
 nav {
-  background-color: #98C5E9;
+  background-color: var(--nav-bg);
   padding: 10px;
   text-align: left;
+
+  a {
+    color: var(--nav-text);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--white);
+    }
+  }
 }
-
-nav a {
-  color: #0A2540;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: white;
-}
-
-
-/* =====================================
-   Content Sections
-   ===================================== */
 
 .card {
-  background-color: #F5FAFF;
-  border-left: 5px solid #6CABDD;
+  background-color: var(--card-bg);
+  border-left: 5px solid var(--primary-color);
   padding: 20px;
   margin: 20px 0;
+  text-align: left; /* Better readability for card content */
 }
-
-
-/* =====================================
-   Images
-   ===================================== */
-
-img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-
-/* =====================================
-   Buttons
-   ===================================== */
 
 button {
-  background-color: #6CABDD;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
 }
 
-button:hover {
-  background-color: #4A90E2;
+.project-img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-/* =====================================
-   Footer
-   ===================================== */
 
 footer {
-  background-color: #6CABDD;
-  color: white;
-  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 15px;
 }
 
 /* =====================================
-   Responsive Design
+   Responsive Design (Nested)
    ===================================== */
-
 @media (max-width: 768px) {
-  
-  /* Make the container fill more of the screen */
   .container {
     width: 95%;
     padding: 10px;
   }
 
-  /* Stack the navigation links vertically */
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+  h1 { font-size: 28px; }
+
+  header { padding: 15px; }
+
+  nav {
+    text-align: center;
+    
+    a {
+      display: block;
+      margin: 10px 0;
+    }
   }
 
-  nav li {
-    margin: 10px 0; /* Add vertical spacing between touch targets */
-  }
-
-  /* Scale down the font sizes for mobile */
-  h1 {
-    font-size: 28px;
-  }
-
-  header {
-    padding: 15px;
-  }
-
-  /* Ensure the cards have enough breathing room */
   .card {
     padding: 15px;
     margin: 10px 0;
+  }
+
+  .project-img {
+    max-width: 90%; /* Larger on mobile for visibility */
   }
 }

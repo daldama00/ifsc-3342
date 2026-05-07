@@ -1,378 +1,221 @@
-/* =====================================
-   CSS Custom Properties
-   ===================================== */
-
-:root{
-  --main-bg-color:#000000;
-  --primary-type-color:#eeeeee;
-  --accent-color-1:#26aae2;
-  --card-bg:#1e293b;
-
-  /* Gradient */
-  --main-gradient:linear-gradient(135deg,#720975,#17d4ec);
+/* 1. Variables & Setup (City Palette) */
+:root {
+  --mcfc-sky-blue: #6CABDD; 
+  --mcfc-navy: #1C2C5B;
+  --mcfc-white: #ffffff;
+  --bg-pitch: #f0f4f8; /* Light gray to contrast the white cards */
+  
+  --text-main: #1C2C5B;
+  --text-light: #52667a;
+  
+  /* Typography */
+  --font-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Georgia', serif;
+  
+  /* Spacing */
+  --radius: 12px;
+  --container-width: 850px;
+  --gap: 1.5rem;
 }
 
-/* =====================================
-   Box Sizing
-   ===================================== */
-
-html{
-  box-sizing:border-box;
-}
-
-*,
-*:before,
-*:after{
-  box-sizing:inherit;
-}
-
-/* =====================================
-   Helper Classes
-   ===================================== */
-
-.visuallyhidden{
-  border:0;
-  clip:rect(0 0 0 0);
-  height:1px;
-  margin:-1px;
-  overflow:hidden;
-  padding:0;
-  position:absolute;
-  width:1px;
-  white-space:nowrap;
-}
-
-/* =====================================
-   Typography
-   ===================================== */
-
-body{
-  font-family:"Monospace", monospace;
-  background:var(--main-bg-color);
-  color:var(--primary-type-color);
-  line-height:1.6;
-}
-
-/* =====================================
-   Images
-   ===================================== */
-
-img{
-  max-width:100%;
-  border-radius:8px;
-  /* Initial glow effect (optional but recommended) */
-  box-shadow: 0 0 30px 5px #8b2bb1;
-  /* Apply the continuous animation */
-  animation: pulse-glow 2s infinite alternate; /* 2s duration, infinite loop, alternates direction */
-}
-
-/* =====================================
-   Container
-   ===================================== */
-
-.container{
-  width:100%;
-  margin:0;
-  background:var(--card-bg);
-  border-radius:0;
-  padding-bottom:20px;
-}
-
-/* =====================================
-   Links
-   ===================================== */
-
-a:link,
-a:visited{
-  color:var(--primary-type-color);
-}
-
-/* =====================================
-   Navigation
-   ===================================== */
-
-nav{
-  padding:1px;
-  background:var(--main-gradient);
-  border-radius:10px 10px 0 0;
-}
-
-nav ul{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:20px;
-}
-
-nav li{
-  list-style-type:none;
-}
-
-/* NAV BUTTONS */
-
-nav a:link,
-nav a:visited{
-  display:block;
-  padding:8px 16px;
-  text-align:center;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:0.75em;
-  border-radius:6px;
-  color:#fff;
-  background:rgba(0,0,0,0.5);
-  transition:all .3s ease;
-}
-
-/* Glow hover effect */
-
-nav a:hover{
-  transform:translateY(-2px);
-  box-shadow:
-  0 0 8px var(--accent-color-1),
-  0 0 18px var(--accent-color-1);
-}
-
-/* =====================================
-   Main
-   ===================================== */
-
-main{
-  padding:1px 20px;
-}
-
-main h1{
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  text-align:center;
-  font-weight:400;
-  font-variant:small-caps;
-}
-
-/* Divider lines */
-
-main h1:before,
-main h1:after{
-  background-color:var(--accent-color-1);
-  content:"\a0";
-  flex-grow:1;
-  height:1px;
-  position:relative;
-  top:0.77em;
-}
-
-main h1:before{
-  margin-right:15px;
-}
-
-main h1:after{
-  margin-left:15px;
-}
-
-/* =====================================
-   Personal Details Grid
-   ===================================== */
-
-dl{
-  font-size:.8rem;
-  display:grid;
-  grid-template:repeat(8,50px)/8em 1fr;
-}
-
-dt{
-  font-weight:800;
-  grid-column:1;
-  padding:10px 0;
-  border-bottom:1px solid var(--accent-color-1);
-}
-
-dd{
-  margin:0;
-  grid-column:2;
-  padding:10px 0;
-  border-bottom:1px solid var(--accent-color-1);
-}
-
-/* =====================================
-   Resume Buttons (Glow Effect)
-   ===================================== */
-
-.related-links{
-  display:flex;
-  justify-content:center;
-  list-style:none;
-  padding:0;
-}
-
-.related-links li{
-  margin-right:20px;
-}
-
-.related-links a{
-  display:inline-block;
-  border-radius:6px;
-  padding:10px 18px;
-  text-align:center;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:0.75em;
-  background:var(--main-gradient);
-  color:#fff;
-  transition:all .3s ease;
-}
-
-/* Glow hover effect */
-
-.related-links a:hover{
-  transform:translateY(-3px);
-  box-shadow:
-  0 0 10px var(--accent-color-1),
-  0 0 20px var(--accent-color-1),
-  0 0 35px var(--accent-color-1);
-}
-
-/* =====================================
-   Skills
-   ===================================== */
-
-#skills li{
-  list-style-type:square;
-}
-
-/* =====================================
-   Job & Education Sections
-   ===================================== */
-
-.job,
-.certificate{
-  border-bottom:1px solid var(--accent-color-1);
-  padding-bottom:20px;
-}
-
-.job *[itemprop="jobTitle"],
-.job *[itemprop="name"],
-.job *[itemprop="url"],
-.job *[itemprop="addressLocality"],
-.certificate *[itemprop="name"]{
-  display:block;
-}
-
-.job h3{
-  margin:20px 0 0 0;
-}
-
-/* =====================================
-   Footer
-   ===================================== */
-
-footer{
-  text-align:center;
-  padding:20px 0;
-  font-size:.8rem;
-}
-
-/* =====================================
-   Reorder Source Using Grid
-   ===================================== */
-
-main.container{
-  display:grid;
-  grid-template-areas:
-  "title"
-  "about"
-  "education"
-  "experience"
-  "skills";
-}
-
-.page-title{
-  grid-area:title;
-}
-
-#about{
-  grid-area:about;
-}
-
-#skills{
-  grid-area:skills;
-}
-
-#experience{
-  grid-area:experience;
-}
-
-#education{
-  grid-area:education;
-}
-
-/* Headshot: fully centered on mobile */
-#headshot {
-  display: block;
-  margin-left: auto;  
-  margin-right: auto; 
-  width: 95%;         
-  max-width: 250px;   
-  box-sizing: border-box; 
-}
-
-
-@media (max-width: 767px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-.related-links a {
-  text-shadow: 1px 1px 2px #000; /* subtle shadow */
-}
-
-/* Tablet Devices ... */
-@media (min-width: 768px) {
+/* 2. Global Styles */
+body {
+  background-color: var(--bg-pitch);
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 
   .container {
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 10px;
+    max-width: var(--container-width);
+    margin: 2rem auto;
+    background: var(--mcfc-white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   }
-
-  nav ul {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  dl {
-    grid-template: repeat(8, 50px) / 8em 1fr;
-  }
-
-  /* Change layout for tablet */
-  main.container{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "title title"
-      "about skills"
-      "education education"
-      "experience experience";
-  }
-
 }
 
+/* 3. Header & Navigation (Nested) */
+header {
+  background: var(--mcfc-navy);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 4px solid var(--mcfc-sky-blue);
 
-/* Desktop Devices ... */
-@media (min-width:1060px){
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
 
-  .container{
-    width:1060px;
+      li a {
+        color: var(--mcfc-white);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--mcfc-sky-blue);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+/* 4. Main Profile Header (Nested) */
+.page-title {
+  font-size: 3.5rem;
+  color: var(--mcfc-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--gap);
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+
+  /* Decorative lines on sides of name */
+  &::before, &::after {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    background-color: var(--mcfc-sky-blue);
+    margin: 0 20px;
+  }
+}
+
+/* 5. Bio & Details (Nested) */
+.bio {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--bg-pitch);
+
+  img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--mcfc-sky-blue);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* Desktop layout */
-  main.container{
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-      "title title"
-      "about skills"
-      "experience skills"
-      "education skills";
+  p {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+
+  dt {
+    font-weight: 800;
+    color: var(--mcfc-sky-blue);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    align-self: center;
   }
 
+  dd {
+    margin: 0;
+    font-weight: 500;
+    padding: 5px 0;
+  }
+}
+
+/* 6. Sections: Skills, Experience, Education (Nested) */
+section {
+  margin-top: 3rem;
+
+  h2 {
+    font-size: 1.8rem;
+    color: var(--mcfc-navy);
+    border-left: 10px solid var(--mcfc-sky-blue);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+    
+    .skill {
+      list-style: none;
+      display: inline-block;
+      background: var(--mcfc-sky-blue);
+      color: var(--mcfc-navy);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      margin: 0 0.5rem 0.5rem 0;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.job, .certificate {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-pitch);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: var(--white);
+    border: 1px solid var(--mcfc-sky-blue);
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--mcfc-navy);
+    font-size: 1.4rem;
+  }
+
+  span {
+    display: block;
+    color: var(--mcfc-sky-blue);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 7. Footer */
+footer {
+  text-align: center;
+  padding: 3rem;
+  background: var(--mcfc-navy);
+  color: var(--mcfc-white);
+  margin-top: 4rem;
+
+  a {
+    color: var(--mcfc-sky-blue);
+    font-weight: bold;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

@@ -74,14 +74,14 @@ header {
 
 /* 4. Main Profile Header (Nested) */
 .page-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: var(--mcfc-navy);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--gap);
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 600;
   text-align: center;
 
   /* Decorative lines on sides of name */

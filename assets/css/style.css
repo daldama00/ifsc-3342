@@ -145,7 +145,7 @@ nav {
 
 nav ul {
   display: grid;
-  /* Auto-responsive grid: columns wrap automatically when space is tight */
+  
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   list-style: none;
@@ -234,7 +234,7 @@ footer {
     gap: 1.5rem;
   }
 
-  /* Nav already handles small screens via minmax grid */
+  
   nav ul {
     grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
   }
